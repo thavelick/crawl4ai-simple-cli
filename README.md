@@ -1,9 +1,5 @@
 # Crawl4AI Simple CLI
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.13+-blue.svg)
-![Version](https://img.shields.io/badge/version-0.1.0-green.svg)
-
 ## Overview
 
 **Crawl4AI Simple CLI** is a lightweight command-line tool that leverages the power of the [Crawl4AI](https://github.com/unclecode/crawl4ai) library to asynchronously crawl websites. It extracts content from web pages, converts them into Markdown files, and packages the results into a ZIP archive for easy access and distribution.
