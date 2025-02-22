@@ -42,9 +42,10 @@ def clean_path(url: str, base_url: str) -> str:
 
     # Normalize .., ., and multiple slashes
     path = os.path.normpath(path)
-    # Clean special characters and convert spaces
+    # Clean special characters and convert spaces, preserving case
     clean = re.sub(r"[^\w\s-]", "", path)
     clean = re.sub(r"\s+", "_", clean.strip())
+    clean = clean.strip("_")  # Remove leading/trailing underscores
     return clean
 
 
@@ -62,9 +63,10 @@ async def process_url(
             # Get title from metadata
             metadata = result.metadata
             title = metadata.get("title", "untitled")
-            # Clean title for filename
+            # Clean title for filename, preserving case
             clean_title = re.sub(r"[^\w\s-]", "", title)
             clean_title = re.sub(r"\s+", "_", clean_title.strip())
+            clean_title = clean_title.strip("_")  # Remove leading/trailing underscores
 
             # Get and clean URL path
             path_suffix = clean_path(url, base_url)
