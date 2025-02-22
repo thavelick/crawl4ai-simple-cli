@@ -11,3 +11,4 @@ wheels/
 
 # Script output
 output/
+.aider*
