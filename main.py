@@ -45,7 +45,7 @@ def clean_path(url: str, base_url: str) -> str:
     # Clean special characters and convert spaces
     clean = re.sub(r"[^\w\s-]", "", path)
     clean = re.sub(r"\s+", "_", clean.strip())
-    return clean.lower()
+    return clean
 
 
 async def process_url(
@@ -70,7 +70,7 @@ async def process_url(
             path_suffix = clean_path(url, base_url)
 
             # Combine title and path for unique filename
-            filename = f"{clean_title.lower()}"
+            filename = f"{clean_title}"
             if path_suffix:
                 filename += f"_{path_suffix}"
             filename += ".md"
